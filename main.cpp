@@ -42,7 +42,16 @@ int main() {
         int userNum = main_menu();
         if (userNum == 1) {
             add_goat(goats, names, colors);
-        } else if (userNum == 2)
+        } else if (userNum == 2) {
+            delete_goat(goats);
+        } else if (userNum == 3) {
+            display_trip(goats);
+        } else if (userNum == 4) {
+            again = false;
+        } else {
+            cout << "unexpected value. program will reset." << endl;
+            again = false;
+        }
     }
 
     return 0;
