@@ -70,6 +70,7 @@ int main_menu() {
         cout << "[4] Quit" << endl;
         cout << "Choice --> ";
         cin >> userNum;
+        cout << endl;
 
         if ((userNum < 1)  || (userNum > 4)) {
             return userNum;
@@ -80,8 +81,7 @@ int main_menu() {
 
 void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     int nameNum = rand() % SZ_NAMES;
-    string goatName = goatNames[nameNum];
-    cout << goatName << endl;    
+    string goatName = goatNames[nameNum];  
 
     int colorNum = rand() % SZ_COLORS;
     string goatColor = goatColors[colorNum];
@@ -100,7 +100,7 @@ void delete_goat(list<Goat> &goats) {
     advance(it, deleteGoat);
     cout << "deleted " << it->get_name() << "." << endl;
     goats.erase(it);
-    cout << "new list: " << endl;
+    cout << "\nnew list: " << endl;
     
     display_trip(goats);
 }
@@ -111,6 +111,9 @@ int select_goat(list<Goat> &goats) {
     for (const Goat &x : goats) {
         cout << "[" << i++ << "] " << x << endl;
     }
+    cout << "\nDelete a goat: " << endl;
+    cout << "Choice --> ";
+    cout << endl;
     cin >> userNum;
     return userNum;
 }
