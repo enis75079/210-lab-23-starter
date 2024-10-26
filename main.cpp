@@ -69,6 +69,10 @@ int main_menu() {
         cout << "[4] Quit" << endl;
         cout << "Choice --> ";
         cin >> userNum;
+
+        if ((userNum < 1) || (userNum > 4)) {
+            again = false;
+        }
     }
     return userNum;  
 }
