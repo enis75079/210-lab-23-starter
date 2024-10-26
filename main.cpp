@@ -106,10 +106,9 @@ void delete_goat(list<Goat> &goats) {
     auto it = goats.begin();
     advance(it, deleteGoat);
     cout << "deleted " << it->get_name() << "." << endl;
+    cout << endl;
     goats.erase(it);
-    // displays the list after the user deletes an item from the list
-    cout << "\nnew list: " << endl;
-    
+    // displays the list after the user deletes an item from the list 
     display_trip(goats);
 }
 
@@ -136,6 +135,7 @@ void display_trip(list<Goat> &goats) {
     }
     int i = 1;
     cout << "current list: " << endl;
+    cout << endl;
     for (const Goat &goat : goats) {
         cout << "[" << i++ << "] " << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
