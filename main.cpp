@@ -107,12 +107,6 @@ void delete_goat(list<Goat> &goats) {
 
 void display_trip(list<Goat> goats) {
     for (Goat &goat : goats) {
-        cout << goat.get_name() << " ";
-    }
-    for (Goat &goat : goats) {
-        cout << "(" << goat.get_age() << ", ";
-    }
-    for (Goat &goat : goats) {
-        cout << goat.get_color()<< ")" << endl;
+        cout << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
 }
