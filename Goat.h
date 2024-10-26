@@ -20,6 +20,14 @@ public:
         color = "";
     }
 
+    Goat(int a, string c) {
+        name = "";
+        age = a;
+        color = c;
+    }
+
+    Goat
+
     // setters and getters
     void set_name(string n)         { name = n; };
     string get_name() const         { return name; };
