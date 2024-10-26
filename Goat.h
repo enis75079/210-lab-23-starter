@@ -44,6 +44,10 @@ public:
     string get_color() const        { return color; }
     
     // write overloaded < operator for the std::list
+    friend ostream& operator<<(ostream& os, const Goat& goat) {
+        os << goat.get_name() << " (Color: " << goat.get_color() << ", Age: " << goat.get_age() << ")";
+        return os;
+    }
 };
 
 #endif

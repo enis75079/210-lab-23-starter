@@ -39,7 +39,7 @@ int main() {
     fin1.close();
 
     add_goat(goats, names, colors);
-    display_trip(goats);
+    select_goat(goats);
 
     return 0;
 }
@@ -71,10 +71,13 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     goats.push_back(newGoat);
 }
 
-void delete_goat(list<Goat> &trip) {
+int select_goat(list<Goat> &goats) {
+    int i = 0;    
+    int userNum = 0;
     for (const Goat &x : goats) {
-        cout << "[" << 
+        cout << "[" << i++ << "] " << x << endl;
     }
+    cin >> userNum;
 }
 
 void delete_goat(list<Goat> &goats) {
