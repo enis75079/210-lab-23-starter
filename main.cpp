@@ -38,9 +38,13 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    add_goat(goats, names, colors);
-    for (string x : goats) {
-        cout << x << endl;
+    string goatName = "name";
+    int age = 12;
+    string goatColor = "color";
+    Goat newGoat(goatName, age, goatColor);
+    goats.push_back(newGoat);
+    for (Goat &goat : goats) {
+        cout << goat.get_name() << endl;
     }
 
     return 0;
@@ -77,6 +81,7 @@ void delete_goat(list<Goat> &goats) {
     if (goats.empty()) {
         return;
     }
+
 
 
 }
