@@ -43,11 +43,19 @@ int main() {
         int num = main_menu();
         if (num == 1) {
             add_goat(goats, names, colors);
+        } else if (num == 2) {
+            delete_goat(goats);
+        } else if (num == 3) {
+            display_trip(goats);
+        } else if (num == 4) {
+            cout << "Program terminated" << endl;
+            again = false;
         } else {
-            cout << "you didnt choose 1" << endl;
+            cout << "input is invalid. Program terminated" << endl;
+            again = false;
         }
-    return 0;
     }
+    return 0;
 }
 
 // main menu function. outputs menu and obtains users selection dependent on an int value input
@@ -65,7 +73,6 @@ int main_menu() {
         cout << userNum << endl;
 
         if ((userNum < 1)  || (userNum > 4)) {
-
             return userNum;
         }
         return userNum;
