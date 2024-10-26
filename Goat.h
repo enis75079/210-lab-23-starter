@@ -43,11 +43,18 @@ public:
     void set_color(string c)        { color = c; }
     string get_color() const        { return color; }
     
-    void main_menu() {
+    int main_menu() {
         int userNum = 0;
         while(userNum != 4) {
-            cout << 
+            cout << "*** GOAT MANAGER 3001 ***" << endl;
+            cout << "[1] Add a goat" << endl;
+            cout << "[2] Delete a goat" << endl;
+            cout << "[3] List goats" << endl;
+            cout << "[4] Quit" << endl;
+            cout << "Choice --> ";
+            cin >> userNum;
         }
+        return userNum;
     }
 
     // write overloaded < operator for the std::list
