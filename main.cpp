@@ -1,3 +1,11 @@
+/*
+
+lab23: Goat Manager 3001
+COMSC-210
+Naveen Islam
+IDE: vscode
+
+*/
 #include <iostream>
 #include <fstream>
 #include <iomanip>
