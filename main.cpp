@@ -15,7 +15,7 @@ using namespace std;
 
 const int SZ_NAMES = 200, SZ_COLORS = 25, MAX_AGE = 20;
 
-int select_goat(list<Goat> trip);
+int select_goat(list<Goat> &trip);
 void delete_goat(list<Goat> &trip);
 void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> &trip);
@@ -40,7 +40,7 @@ int main() {
 
     int num = 0;
     while (again) {
-        int num = main_menu();
+        num = main_menu();
         if (num == 1) {
             add_goat(goats, names, colors);
         } else if (num == 2) {
@@ -94,7 +94,7 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
 }
 
 void delete_goat(list<Goat> &goats) {
-    int deleteGoat = select_goat(goats);
+    int deleteGoat = select_goat(goats) - 1;
 
     auto it = goats.begin();
     advance(it, deleteGoat);
