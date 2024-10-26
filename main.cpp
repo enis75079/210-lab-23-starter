@@ -107,7 +107,12 @@ void delete_goat(list<Goat> &goats) {
     int deleteGoat = select_goat(goats);
 
     auto it = goats.begin();
-    advance(it, deleteGoat)
+    advance(it, deleteGoat);
+    cout << "deleted " << it->get_name() << "." << endl;
+    goats.erase(it);
+    cout << "new list: " << endl;
+    
+    display_trip(goats);
 }
 
 void display_trip(list<Goat> &goats) {
