@@ -41,25 +41,20 @@ int main() {
     int userNum = 0;
     while (again) {
         int userNum = main_menu();
-        if (userNum == 1) {
-            add_goat(goats, names, colors);
-            break;
-        } 
-        if (userNum == 2) {
-            delete_goat(goats);
-            break;
-        } 
-        if (userNum == 3) {
-            display_trip(goats);
-            break;
-        } 
-        if (userNum == 4) {
-            again = false;
-            break;
-        } else {
-            cout << "unexpected value. program will reset." << endl;
-            again = false;
-            break;
+        switch (userNum) {
+            case 1:
+                add_goat(goats, names, colors);
+                break;
+            case 2:
+                delete_goat(goats);
+                break;
+            case 3:
+                display_trip(goats);
+            case 4:
+                again = false;
+                break;
+            default:
+                again = false;                                
         }
     }
 
@@ -101,7 +96,7 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
 }
 
 int select_goat(list<Goat> &goats) {
-    int i = 0;    
+    int i = 1;    
     int userNum = 0;
     for (const Goat &x : goats) {
         cout << "[" << i++ << "] " << x << endl;
@@ -117,7 +112,7 @@ void delete_goat(list<Goat> &goats) {
 }
 
 void display_trip(list<Goat> &goats) {
-    for (Goat &goat : goats) {
+    for (const Goat &goat : goats) {
         cout << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
 }
