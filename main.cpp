@@ -60,7 +60,8 @@ int main() {
 // main menu function. outputs menu and obtains users selection dependent on an int value input
 int main_menu() {
     int userNum = 0;
-    while(userNum != 4) {
+    bool again = true;
+    while(again == true) {
         cout << "*** GOAT MANAGER 3001 ***" << endl;
         cout << "[1] Add a goat" << endl;
         cout << "[2] Delete a goat" << endl;
