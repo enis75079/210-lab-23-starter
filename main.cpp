@@ -25,8 +25,8 @@ int main() {
     srand(time(0));
     bool again;
     list<Goat> goats;
-    string names[SZ_NAMES];
-    string colors[SZ_COLORS];
+    string goatNames[SZ_NAMES];
+    string goatColors[SZ_COLORS];
 
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
@@ -40,7 +40,7 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-
+    add_goat(goats, goatNames, goatColors);
 
     return 0;
 }
