@@ -43,9 +43,7 @@ int main() {
     string goatColor = "color";
     Goat newGoat(goatName, age, goatColor);
     goats.push_back(newGoat);
-    for (Goat &goat : goats) {
-        cout << goat.get_name() << endl;
-    }
+    display_trip(goats);
 
     return 0;
 }
@@ -81,7 +79,16 @@ void delete_goat(list<Goat> &goats) {
     if (goats.empty()) {
         return;
     }
+}
 
-
-
+void display_trip(list<Goat> goats) {
+    for (Goat &goat : goats) {
+        cout << goat.get_name() << " ";
+    }
+    for (Goat &goat : goats) {
+        cout << "(" << goat.get_age() << ", ";
+    }
+    for (Goat &goat : goats) {
+        cout << goat.get_color()<< ")" << endl;
+    }
 }
