@@ -93,16 +93,6 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
 
 }
 
-int select_goat(list<Goat> &goats) {
-    int i = 1;    
-    int userNum = 0;
-    for (const Goat &x : goats) {
-        cout << "[" << i++ << "] " << x << endl;
-    }
-    cin >> userNum;
-    return userNum;
-}
-
 void delete_goat(list<Goat> &goats) {
     int deleteGoat = select_goat(goats);
 
@@ -113,6 +103,16 @@ void delete_goat(list<Goat> &goats) {
     cout << "new list: " << endl;
     
     display_trip(goats);
+}
+
+int select_goat(list<Goat> &goats) {
+    int i = 1;    
+    int userNum = 0;
+    for (const Goat &x : goats) {
+        cout << "[" << i++ << "] " << x << endl;
+    }
+    cin >> userNum;
+    return userNum;
 }
 
 void display_trip(list<Goat> &goats) {
