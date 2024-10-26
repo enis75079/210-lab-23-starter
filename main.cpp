@@ -86,6 +86,7 @@ int main_menu() {
 void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     int nameNum = rand() % SZ_NAMES;
     string goatName = goatNames[nameNum];
+    cout << goatName << endl;    
 
     int colorNum = rand() % SZ_COLORS;
     string goatColor = goatColors[colorNum];
@@ -93,6 +94,7 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     int age = rand() % MAX_AGE + 1;
     Goat newGoat(goatName, age, goatColor);
     goats.push_back(newGoat);
+
 }
 
 int select_goat(list<Goat> &goats) {
@@ -112,6 +114,10 @@ void delete_goat(list<Goat> &goats) {
 }
 
 void display_trip(list<Goat> &goats) {
+    if (goats.empty()) {
+        cout << "no goats" << endl;
+        return;
+    }
     for (const Goat &goat : goats) {
         cout << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
