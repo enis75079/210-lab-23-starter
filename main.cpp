@@ -38,27 +38,16 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    int userNum = 0;
+    int num = 0;
     while (again) {
-        int userNum = main_menu();
-        switch (userNum) {
-            case 1:
-                add_goat(goats, names, colors);
-                break;
-            case 2:
-                delete_goat(goats);
-                break;
-            case 3:
-                display_trip(goats);
-            case 4:
-                again = false;
-                break;
-            default:
-                again = false;                                
+        int num = main_menu();
+        if (num == 1) {
+            add_goat(goats, names, colors);
+        } else {
+            cout << "you didnt choose 1" << endl;
         }
-    }
-
     return 0;
+    }
 }
 
 // main menu function. outputs menu and obtains users selection dependent on an int value input
@@ -76,11 +65,11 @@ int main_menu() {
         cout << userNum << endl;
 
         if ((userNum < 1)  || (userNum > 4)) {
-            again = false;
-            
+
+            return userNum;
         }
+        return userNum;
     }
-    return userNum;  
 }
 
 void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
