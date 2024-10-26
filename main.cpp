@@ -93,6 +93,7 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
 
 }
 
+// delete goat function. reads user input from select_goat() function and deletes the object in that index
 void delete_goat(list<Goat> &goats) {
     int deleteGoat = select_goat(goats) - 1;
 
@@ -105,25 +106,29 @@ void delete_goat(list<Goat> &goats) {
     display_trip(goats);
 }
 
+// select goat function. used in the delete goat function. user inputs a number that they want to delete from the list that is displayed.
 int select_goat(list<Goat> &goats) {
     int i = 1;    
     int userNum = 0;
+    // outputs current list
     for (const Goat &x : goats) {
         cout << "[" << i++ << "] " << x << endl;
     }
     cout << "\nDelete a goat: " << endl;
     cout << "Choice --> ";
-    cout << endl;
     cin >> userNum;
+    cout << endl;
     return userNum;
 }
 
+// display trip function. outputs the current list in a formatted fashion
 void display_trip(list<Goat> &goats) {
     if (goats.empty()) {
         cout << "no goats" << endl;
         return;
     }
     int i = 1;
+    cout << "current list: " << endl;
     for (const Goat &goat : goats) {
         cout << "[" << i++ << "] " << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
