@@ -61,7 +61,7 @@ int main() {
 int main_menu() {
     int userNum = 0;
     bool again = true;
-    while(again == true) {
+    while(again) {
         cout << "*** GOAT MANAGER 3001 ***" << endl;
         cout << "[1] Add a goat" << endl;
         cout << "[2] Delete a goat" << endl;
@@ -69,9 +69,11 @@ int main_menu() {
         cout << "[4] Quit" << endl;
         cout << "Choice --> ";
         cin >> userNum;
+        cout << userNum << endl;
 
-        if ((userNum < 1) || (userNum > 4)) {
+        if ((userNum < 1)  || (userNum > 4)) {
             again = false;
+            
         }
     }
     return userNum;  
@@ -84,7 +86,7 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     int colorNum = rand() % SZ_COLORS;
     string goatColor = goatColors[colorNum];
 
-    int age = rand() % MAX_AGE;
+    int age = rand() % MAX_AGE + 1;
     Goat newGoat(goatName, age, goatColor);
     goats.push_back(newGoat);
 }
