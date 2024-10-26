@@ -24,6 +24,9 @@ int main_menu();
 int main() {
     srand(time(0));
     bool again;
+    list<Goat> goats;
+    string names[SZ_NAMES];
+    string colors[SZ_COLORS];
 
     // read & populate arrays for names and colors
     ifstream fin("names.txt");
@@ -36,7 +39,6 @@ int main() {
     i = 0;
     while (fin1 >> colors[i++]);
     fin1.close();
-
 
 
 
@@ -61,4 +63,5 @@ int main_menu() {
 void add_goat(list<Goat> &trip, string goatNames[], string goatColor[]) {
     int nameNum = rand() % SZ_NAMES;
     string goatName = goatNames[SZ_NAMES];
+    cout << goatName;
 }
