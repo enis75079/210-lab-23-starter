@@ -115,6 +115,6 @@ void display_trip(list<Goat> &goats) {
         return;
     }
     for (const Goat &goat : goats) {
-        cout << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
+        cout << "[" << count << "] " << goat.get_name() << " (" << goat.get_age() << ", " << goat.get_color() << ") " << endl;
     }
 }
