@@ -21,9 +21,11 @@ void add_goat(list<Goat> &trip, string [], string []);
 void display_trip(list<Goat> &trip);
 int main_menu();
 
+// main function
 int main() {
     srand(time(0));
     bool again = true;
+    // creates a class Goat list
     list<Goat> goats;
 
     // read & populate arrays for names and colors
@@ -39,6 +41,7 @@ int main() {
     fin1.close();
 
     int num = 0;
+    // while true, continue to run main menu
     while (again) {
         num = main_menu();
         if (num == 1) {
@@ -72,6 +75,7 @@ int main_menu() {
         cin >> userNum;
         cout << endl;
 
+        // if user inputs a value beyond the range of the intended values, returns the function
         if ((userNum < 1)  || (userNum > 4)) {
             return userNum;
         }
@@ -79,6 +83,7 @@ int main_menu() {
     }
 }
 
+// add goat function. generates a random name, color, and age. creates a new goat object and adds it to the parameter list
 void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
     int nameNum = rand() % SZ_NAMES;
     string goatName = goatNames[nameNum];  
@@ -97,10 +102,12 @@ void add_goat(list<Goat> &goats, string goatNames[], string goatColors[]) {
 void delete_goat(list<Goat> &goats) {
     int deleteGoat = select_goat(goats) - 1;
 
+    // goes through the list to find the user's desired index
     auto it = goats.begin();
     advance(it, deleteGoat);
     cout << "deleted " << it->get_name() << "." << endl;
     goats.erase(it);
+    // displays the list after the user deletes an item from the list
     cout << "\nnew list: " << endl;
     
     display_trip(goats);
