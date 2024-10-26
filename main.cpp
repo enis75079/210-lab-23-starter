@@ -38,7 +38,7 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    add_goat(goats, names, colors);
+
     return 0;
 }
 
@@ -57,8 +57,12 @@ int main_menu() {
     return userNum;  
 }
 
-void add_goat(list<Goat> &trip, string goatNames[], string goatColor[]) {
+void add_goat(list<Goat> &trip, string goatNames[], string goatColors[]) {
     int nameNum = rand() % SZ_NAMES;
     string goatName = goatNames[nameNum];
-    cout << goatName << endl;;
+    cout << goatName << endl;
+
+    int colorNum = rand() % SZ_COLORS;
+    string goatColor = goatColors[colorNum];
+    cout << goatColor << endl;
 }
