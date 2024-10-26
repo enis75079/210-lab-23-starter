@@ -23,7 +23,7 @@ int main_menu();
 
 int main() {
     srand(time(0));
-    bool again;
+    bool again = true;
     list<Goat> goats;
 
     // read & populate arrays for names and colors
@@ -38,8 +38,12 @@ int main() {
     while (fin1 >> colors[i++]);
     fin1.close();
 
-    add_goat(goats, names, colors);
-    select_goat(goats);
+    while (again == true) {
+        int userNum = main_menu();
+        if (userNum == 1) {
+            add_goat(goats, names, colors);
+        } else if (userNum == 2)
+    }
 
     return 0;
 }
@@ -78,6 +82,7 @@ int select_goat(list<Goat> &goats) {
         cout << "[" << i++ << "] " << x << endl;
     }
     cin >> userNum;
+    return userNum;
 }
 
 void delete_goat(list<Goat> &goats) {
