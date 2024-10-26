@@ -14,19 +14,26 @@ public:
     Goat()                          { name = ""; age = 0; color = ""; }
     // write three more constructors
 
+    // string name parameter
     Goat(string n) {
         name = n;
         age = 0;
         color = "";
     }
 
+    // integer age and string color parameter
     Goat(int a, string c) {
         name = "";
         age = a;
         color = c;
     }
 
-    Goat
+    // string name, integer age, and string color parameter
+    Goat(string n, int a, string c) {
+        name = n;
+        age = a;
+        color = c;
+    }
 
     // setters and getters
     void set_name(string n)         { name = n; };
@@ -35,6 +42,13 @@ public:
     int get_age() const             { return age; }
     void set_color(string c)        { color = c; }
     string get_color() const        { return color; }
+    
+    void main_menu() {
+        int userNum = 0;
+        while(userNum != 4) {
+            cout << 
+        }
+    }
 
     // write overloaded < operator for the std::list
 };
